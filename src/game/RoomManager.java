@@ -36,22 +36,23 @@ public class RoomManager {
 		this.rooms[3] = room3;
 	
 		foyer.setExists(room1, 0);
+		foyer.setExists(foyer, 4);
 		
 		//room 1
 		room1.setExists(room2, 0);
 		room1.setExists(foyer, 1);
 		room1.setExists(room3, 2);
-
+		room1.setExists(room1, 4);
 		
 		//room 2
 		room2.setExists(room3, 0);
 		room2.setExists(room1, 1);
-	
+		room2.setExists(room2, 4);
 		
 		//room 3
 		room3.setExists(room2, 1);
 		room3.setExists(room1, 3);
-	
+		room3.setExists(room3, 4);
 		
 	
 	}
@@ -59,11 +60,6 @@ public class RoomManager {
 	public Room getStartingRoom() {
 		return this.startingRoom;
 	}
-	
-	public Room getRoom(int i) {
-		return this.rooms[i];
-	}
-	
 	
 
 }

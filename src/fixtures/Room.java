@@ -7,7 +7,7 @@ public class Room extends Fixture {
 	
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
-		this.exits = new Room[4];
+		this.exits = new Room[5];
 		// TODO Auto-generated constructor stub
 	}
 //	
@@ -21,6 +21,7 @@ public class Room extends Fixture {
 
 	public void setExists(Room room, int i) {
 		this.exits[i] = room;
+		//throw new ArrayIndexOutOfBoundsException();
 		
 	}
 	
@@ -30,16 +31,27 @@ public class Room extends Fixture {
 	
 	public Room getExit(String direction) {
 		if(direction.equalsIgnoreCase("north")) {
+			if(exits[0] != null) {
 			return exits[0];
+			}
 		}
 		if(direction.equalsIgnoreCase("south")) {
+			if(exits[1] != null) {
 			return exits[1];
+			}
 		}
 		if(direction.equalsIgnoreCase("east")) {
+			if(exits[2] != null) {
 			return exits[2];
+			}
 		}
-		return exits[3];
-		
+		if(direction.equalsIgnoreCase("west")) {
+			if(exits[3] != null) {
+			return exits[3];
+			}
+		}
+		System.out.println("no such direction! input again!\n");
+		return exits[4];
 	}
 	
 	public void printDirection() {
