@@ -1,13 +1,16 @@
 package fixtures;
 
+
 public class Room extends Fixture {
 	Room[] exits;
+	Item[] item;
 	//Room testReturn;
 	
 	
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
 		this.exits = new Room[5];
+		this.item = new Item[2];
 		// TODO Auto-generated constructor stub
 	}
 //	
@@ -21,7 +24,24 @@ public class Room extends Fixture {
 
 	public void setExists(Room room, int i) {
 		this.exits[i] = room;
-		//throw new ArrayIndexOutOfBoundsException();
+		
+	}
+	
+	public void setItemToRoom(Item item, int i) {
+		this.item[i] = item;
+	}
+	
+	public Item getItem(int i){
+		return item[i];
+		
+	}
+	
+	public int getItemSize() {
+		return this.item.length;
+	}
+	
+	public String getItemName(int i) {
+		return this.item[i].itemName();
 		
 	}
 	
@@ -50,7 +70,7 @@ public class Room extends Fixture {
 			return exits[3];
 			}
 		}
-		System.out.println("no such direction! input again!\n");
+		System.out.println("No such direction!");
 		return exits[4];
 	}
 	

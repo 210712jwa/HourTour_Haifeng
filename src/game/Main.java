@@ -10,16 +10,22 @@ public class Main {
 	private static Player player = new Player();
 	//private static Room room = new Room();
 	private static RoomManager rM = new RoomManager();
+	//private static ItemManager itemManager = new ItemManager();
 	private static boolean run = true;
+	//private ArrayList<Item> = new ArrayList<Item>();
 
 	public static void main(String[] args) {
 		//RoomManager rM =  new RoomManager();
+		//itemManager.init();
 		rM.init();
+		
+	
 		player.setRoom(rM.getStartingRoom());
 		//player.getCurrentRoom().printDirection();
 		//boolean run = true;
 		while(run) {
 		printRoom(player);
+		printItem(player);
 		collectInput();
 		parse(input, player);
 		}
@@ -33,13 +39,18 @@ public class Main {
 
 	}
 	
-	private static void printItem() {
-		
+	private static void printItem(Player player) {
+		Room cRoom = player.getCurrentRoom();
+		for(int i = 0; i < cRoom.getItemSize(); i++) {
+			if(cRoom.getItem(i) != null) {
+			System.out.println(cRoom.getItemName(i));
+			}
+		}
 	}
 
 	private static String[] collectInput() {
 		String inputTemp = sc.nextLine();
-		input = inputTemp.split("\\s");
+		input = inputTemp.split("\\s+");
 	
 		//System.out.println(input[0] + " " + input[1]);
 		return input;
@@ -85,7 +96,7 @@ public class Main {
 //						System.out.println(player.getCurrentRoom().toString());
 						break;
 					default:
-						System.out.print("Invalid input, try again!");
+						System.out.print("Invalid input, try again!/n");
 						break;
 
 				}
@@ -175,7 +186,7 @@ public class Main {
 //			}
 	
 		} else {
-			System.out.println("Invaild input, try agin!");
+			System.out.println("Invaild input, try agin!/n");
 
 		}
 

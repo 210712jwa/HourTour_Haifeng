@@ -16,6 +16,10 @@ public class Item extends Fixture {
 	public Item[] getItem() {
 		return this.item;
 	}
+	
+	public String itemName() {
+		return this.name;
+	}
 
 	public void removeItem(Item[] item, int num) {
 		

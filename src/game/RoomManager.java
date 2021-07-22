@@ -8,9 +8,10 @@ public class RoomManager {
 
 	private Room[] rooms = new Room[4];
 	
+	private ItemManager itemManager = new ItemManager();
 
 	public void init() {
-		
+		itemManager.init();
 		Room foyer = new Room("Enterance", "The small entryway of a neo-colonial house.", "The hardwood floor leads west into doorway,");
 		this.rooms[0] = foyer;
 		//System.out.println(this.rooms[0]);
@@ -54,6 +55,13 @@ public class RoomManager {
 		room3.setExists(room1, 3);
 		room3.setExists(room3, 4);
 		
+		System.out.println(itemManager.getItem(0));
+		foyer.setItemToRoom(itemManager.getItem(0), 0);
+		room1.setItemToRoom(itemManager.getItem(0), 0);
+		room1.setItemToRoom(itemManager.getItem(1), 1);
+		room2.setItemToRoom(itemManager.getItem(2), 0);
+		room3.setItemToRoom(itemManager.getItem(3), 0);
+		//room3.setItemToRoom(itemManager.getItem(4), 1);
 	
 	}
 	
