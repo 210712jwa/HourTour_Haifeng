@@ -9,20 +9,15 @@ public class Main {
 	private static Scanner sc = new Scanner(System.in);
 	private static String[] input;
 	private static Player player = new Player();
-	// private static Room room = new Room();
 	private static RoomManager rM = new RoomManager();
-	// private static ItemManager itemManager = new ItemManager();
 	private static boolean run = true;
-	// private ArrayList<Item> = new ArrayList<Item>();
+	private static List<Item> playerItem = new ArrayList<>();
+	
 
 	public static void main(String[] args) {
-		// RoomManager rM = new RoomManager();
-		// itemManager.init();
+		
 		rM.init();
-
 		player.setRoom(rM.getStartingRoom());
-		// player.getCurrentRoom().printDirection();
-		// boolean run = true;
 		while (run) {
 			printRoom(player);
 			printItem(player);
@@ -56,11 +51,6 @@ public class Main {
 		System.out.print("\n");
 	}
 
-	private static void pickUpItem(Player player) {
-		Room cRoom = player.getCurrentRoom();
-		// cRoom.removeItem(, 0);
-	}
-
 	private static String[] collectInput() {
 		String inputTemp = sc.nextLine();
 		input = inputTemp.split("\\s+");
@@ -80,16 +70,26 @@ public class Main {
 		if (command[0].equalsIgnoreCase("pick")) {
 			if (command[1].equalsIgnoreCase("up")) {
 				if (player.getCurrentRoom().getItemSize() != 0) {
+					
 					Item[] itemArray = player.getCurrentRoom().getItem();
 					for (int i = 0; i < itemArray.length - 1; i++) {
+						if(player.getCurrentRoom().getItem(i) != null) {
 						String itemName = player.getCurrentRoom().getItemName(i);
 						if (command[2].equalsIgnoreCase(itemName)) {
-							player.getCurrentRoom().removeItem(player.getCurrentRoom().getItem(), i);
+							playerItem.add(player.getCurrentRoom().getItem(i));
+							player.getCurrentRoom().removeItem(i);
 							System.out.println("You pick up " + itemName);
 						}
-
+						//System.out.println(player.getCurrentRoom().getItem());
+						}
 					}
 				}
+			}
+		}
+		
+		if(command[0].equalsIgnoreCase("open")) {
+			if(command[1].equalsIgnoreCase("bag")) {
+				System.out.println("You have " + playerItem.toString());
 			}
 		}
 

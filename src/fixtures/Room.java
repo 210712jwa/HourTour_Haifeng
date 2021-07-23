@@ -10,7 +10,7 @@ public class Room extends Fixture {
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
 		this.exits = new Room[5];
-		this.item = new Item[2];
+		this.item = new Item[10];
 		// TODO Auto-generated constructor stub
 	}
 //	
@@ -36,7 +36,7 @@ public class Room extends Fixture {
 	}
 	
 	public Item getItem(int i){
-		return item[i];
+			return item[i];
 		
 	}
 	
@@ -49,7 +49,7 @@ public class Room extends Fixture {
 		
 	}
 	
-	public void removeItem(Item[] item, int num) {
+	public void removeItem(int num) {
 		this.item[num] = null;
 	}
 	

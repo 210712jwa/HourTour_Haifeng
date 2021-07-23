@@ -20,6 +20,10 @@ public class Item extends Fixture {
 	public String getItemName() {
 		return this.name;
 	}
+	@Override
+	public String toString() {
+        return name;
+    }
 
 
 }
