@@ -12,10 +12,9 @@ public class Main {
 	private static RoomManager rM = new RoomManager();
 	private static boolean run = true;
 	private static List<Item> playerItem = new ArrayList<>();
-	
 
 	public static void main(String[] args) {
-		
+
 		rM.init();
 		player.setRoom(rM.getStartingRoom());
 		while (run) {
@@ -31,7 +30,6 @@ public class Main {
 	private static void printRoom(Player player) {
 		Room cRoom = player.getCurrentRoom();
 		System.out.println(cRoom);
-
 	}
 
 	private static void printExit(Player player) {
@@ -40,6 +38,7 @@ public class Main {
 		cRoom.printDirection();
 	}
 
+	// print item in room
 	private static void printItem(Player player) {
 		Room cRoom = player.getCurrentRoom();
 		System.out.println("Item:");
@@ -51,44 +50,44 @@ public class Main {
 		System.out.print("\n");
 	}
 
+	// split input by space
 	private static String[] collectInput() {
 		String inputTemp = sc.nextLine();
 		input = inputTemp.split("\\s+");
-
-		// System.out.println(input[0] + " " + input[1]);
 		return input;
 
 	}
 
+	// take in user input and proceed
 	private static void parse(String[] command, Player player) {
 
 		if (command[0].equalsIgnoreCase("quit")) {
 			run = false;
 			System.out.println("Quit successfully, goodbye!");
 		}
-		
+
+		// pick up command
 		if (command[0].equalsIgnoreCase("pick")) {
 			if (command[1].equalsIgnoreCase("up")) {
 				if (player.getCurrentRoom().getItemSize() != 0) {
-					
+
 					Item[] itemArray = player.getCurrentRoom().getItem();
 					for (int i = 0; i < itemArray.length - 1; i++) {
-						if(player.getCurrentRoom().getItem(i) != null) {
-						String itemName = player.getCurrentRoom().getItemName(i);
-						if (command[2].equalsIgnoreCase(itemName)) {
-							playerItem.add(player.getCurrentRoom().getItem(i));
-							player.getCurrentRoom().removeItem(i);
-							System.out.println("You pick up " + itemName);
-						}
-						//System.out.println(player.getCurrentRoom().getItem());
+						if (player.getCurrentRoom().getItem(i) != null) {
+							String itemName = player.getCurrentRoom().getItemName(i);
+							if (command[2].equalsIgnoreCase(itemName)) {
+								playerItem.add(player.getCurrentRoom().getItem(i));
+								player.getCurrentRoom().removeItem(i);
+								System.out.println("You pick up " + itemName);
+							}
 						}
 					}
 				}
 			}
 		}
-		
-		if(command[0].equalsIgnoreCase("open")) {
-			if(command[1].equalsIgnoreCase("bag")) {
+
+		if (command[0].equalsIgnoreCase("open")) {
+			if (command[1].equalsIgnoreCase("bag")) {
 				System.out.println("You have " + playerItem.toString());
 			}
 		}
