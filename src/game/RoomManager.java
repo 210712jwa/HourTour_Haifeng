@@ -64,7 +64,8 @@ public class RoomManager {
 		entrance.setItemToRoom(itemManager.getItem(5), 0);
 		livingRoom.setItemToRoom(itemManager.getItem(0), 0);
 		bathroom.setItemToRoom(itemManager.getItem(1), 0);
-		bedroom.setItemToRoom(itemManager.getItem(3), 0);
+		bedroom.setItemToRoom(itemManager.getItem(2), 0);
+		bedroom.setItemToRoom(itemManager.getItem(3), 1);
 		kitchen.setItemToRoom(itemManager.getItem(4), 0);
 
 	}

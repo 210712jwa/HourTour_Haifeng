@@ -79,7 +79,7 @@ public class Main {
 							if (command[2].equalsIgnoreCase(itemName)) {
 								playerItem.add(player.getCurrentRoom().getItem(i));
 								player.getCurrentRoom().removeItem(i);
-								System.out.println("You pick up " + itemName);
+								System.out.println("You pick up " + itemName + ".\n");
 							}
 						}
 					}
@@ -90,7 +90,7 @@ public class Main {
 		//see item in bag
 		if (command[0].equalsIgnoreCase("open")) {
 			if (command[1].equalsIgnoreCase("bag")) {
-				System.out.println("You have " + playerItem.toString());
+				System.out.println("You have " + playerItem.toString() + ".\n");
 			}
 		}
 
