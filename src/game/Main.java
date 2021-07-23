@@ -58,7 +58,7 @@ public class Main {
 
 	}
 
-	// take in user input and proceed
+	// take in user input and proceed command
 	private static void parse(String[] command, Player player) {
 
 		if (command[0].equalsIgnoreCase("quit")) {
