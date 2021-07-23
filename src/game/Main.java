@@ -90,17 +90,15 @@ public class Main {
 		// put down command
 		if (command[0].equalsIgnoreCase("put")) {
 			if (command[1].equalsIgnoreCase("down")) {
-				for (int i = 0; i < playerItem.size(); i++) {
-					if (playerItem.size() != 0) {
-						String command2 = "[" + command[2]+ "]";
-						if (command2.equalsIgnoreCase(playerItem.toString())) {
-							for (int j = 0; j < player.getCurrentRoom().getItemSize(); j++) {
+				for (int i = playerItem.size() - 1; i >= 0 ; i--) {
+						if (command[2].equalsIgnoreCase(playerItem.get(i).toString())) {
+							for (int j = 0; j < player.getCurrentRoom().getItem().length; j++) {
 								if (player.getCurrentRoom().getItem(j) == null) {
 									player.getCurrentRoom().setItemToRoom(playerItem.get(i), j);
 									playerItem.remove(i);
 									break;
 								}
-							}
+							
 						}
 					}
 				}
