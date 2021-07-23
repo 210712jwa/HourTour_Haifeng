@@ -72,7 +72,7 @@ public class Main {
 				if (player.getCurrentRoom().getItemSize() != 0) {
 
 					Item[] itemArray = player.getCurrentRoom().getItem();
-					//remove item from stored array and put the removed item to array list(bag)
+					// remove item from stored array and put the removed item to array list(bag)
 					for (int i = 0; i < itemArray.length - 1; i++) {
 						if (player.getCurrentRoom().getItem(i) != null) {
 							String itemName = player.getCurrentRoom().getItemName(i);
@@ -80,7 +80,7 @@ public class Main {
 								playerItem.add(player.getCurrentRoom().getItem(i));
 								player.getCurrentRoom().removeItem(i);
 								System.out.println("You pick up " + itemName + ".\n");
-							}else {
+							} else {
 								System.out.println("No such item!");
 							}
 						}
@@ -88,15 +88,15 @@ public class Main {
 				}
 			}
 		}
-		
-		//see item in bag
+
+		// see item in bag
 		if (command[0].equalsIgnoreCase("open")) {
 			if (command[1].equalsIgnoreCase("bag")) {
-				if(playerItem.size() == 0) {
+				if (playerItem.size() == 0) {
 					System.out.println("Nothing in the bag!\n");
-				}else {
-				System.out.println("You have " + playerItem.toString() + ".\n");
-			}
+				} else {
+					System.out.println("You have " + playerItem.toString() + ".\n");
+				}
 			}
 		}
 
