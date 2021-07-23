@@ -72,6 +72,7 @@ public class Main {
 				if (player.getCurrentRoom().getItemSize() != 0) {
 
 					Item[] itemArray = player.getCurrentRoom().getItem();
+					//remove item from stored array and put the removed item to array list(bag)
 					for (int i = 0; i < itemArray.length - 1; i++) {
 						if (player.getCurrentRoom().getItem(i) != null) {
 							String itemName = player.getCurrentRoom().getItemName(i);
