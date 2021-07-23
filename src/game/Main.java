@@ -14,7 +14,7 @@ public class Main {
 	private static List<Item> playerItem = new ArrayList<>();
 
 	public static void main(String[] args) {
-		System.out.println("Command: go + direction, pick up + item name, open bag, quit");
+		System.out.println("Command: go + direction, pick up + item name, open bag, put down, quit");
 		rM.init();
 		player.setRoom(rM.getStartingRoom());
 		while (run) {
