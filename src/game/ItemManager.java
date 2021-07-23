@@ -4,25 +4,26 @@ import fixtures.Item;
 
 public class ItemManager {
 	
-	private Item[] items = new Item[5];
+	private Item[] items = new Item[6];
 	
 	public void init() {
-		Item item1 = new Item("book", "some book", "description");
-		this.items[0] = item1;
+		Item cup = new Item("cup", "some cup", "a tea cup fill with water");
+		this.items[0] = cup;
 		
-		Item item2 = new Item("switch", "some book", "description");
-		this.items[1] = item2;
+		Item towel = new Item("towel", "some towel", "a white shower towel");
+		this.items[1] = towel;
 		
-		Item item3 = new Item("ipad", "some book", "description");
-		this.items[2] = item3;
+		Item ipad = new Item("ipad", "some ipad", "a black ipad pro");
+		this.items[2] = ipad;
 		
-		Item item4 = new Item("iphone", "some book", "description");
-		this.items[3] = item4;
+		Item iphone = new Item("iphone", "some iphone", "a black iphone 8");
+		this.items[3] = iphone;
 		
-		Item item5 = new Item("cup", "some book", "description");
-		this.items[4] = item5;
+		Item bowl = new Item("bowl", "some bowl", "a large bowl of rice");
+		this.items[4] = bowl;
 		
-		
+		Item book = new Item("key", "some key", "house key and keys for different room");
+		this.items[5] = book;
 	}
 	
 	public Item getItem(int i) {
