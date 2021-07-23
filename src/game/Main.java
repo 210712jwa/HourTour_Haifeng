@@ -86,7 +86,8 @@ public class Main {
 				}
 			}
 		}
-
+		
+		//see item in bag
 		if (command[0].equalsIgnoreCase("open")) {
 			if (command[1].equalsIgnoreCase("bag")) {
 				System.out.println("You have " + playerItem.toString());
