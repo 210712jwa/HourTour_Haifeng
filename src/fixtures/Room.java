@@ -31,6 +31,10 @@ public class Room extends Fixture {
 		this.item[i] = item;
 	}
 	
+	public Item[] getItem() {
+		return this.item;
+	}
+	
 	public Item getItem(int i){
 		return item[i];
 		
@@ -41,8 +45,12 @@ public class Room extends Fixture {
 	}
 	
 	public String getItemName(int i) {
-		return this.item[i].itemName();
+		return this.item[i].getItemName();
 		
+	}
+	
+	public void removeItem(Item[] item, int num) {
+		this.item[num] = null;
 	}
 	
 	public Room[] getExits() {

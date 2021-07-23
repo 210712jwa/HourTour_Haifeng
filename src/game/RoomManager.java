@@ -12,28 +12,28 @@ public class RoomManager {
 
 	public void init() {
 		itemManager.init();
-		Room foyer = new Room("Enterance", "The small entryway of a neo-colonial house.", "The hardwood floor leads west into doorway,");
+		Room foyer = new Room("Enterance", "The small entryway of a neo-colonial house.", "The hardwood floor leads west into doorway,\n");
 		this.rooms[0] = foyer;
 		//System.out.println(this.rooms[0]);
 		this.startingRoom = foyer;
 
 		
 
-		Room room1 = new Room("room1", "shortDes", "long");
+		Room room1 = new Room("room1", "shortDes", "long\n");
 		this.rooms[1] = room1;
 
 		Room room2 = new Room("room2", "shortDes",
 				"The small entryway of a neo-colonial house. A dining room is open to the south, where a large table can be seen."
 						+ "\n"
 						+ "The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor."
-						+ "\n" + "To the north is a small room, where you can see a piano.");
+						+ "\n" + "To the north is a small room, where you can see a piano\n.");
 		this.rooms[2] = room2;
 
 		Room room3 = new Room("room3", "shortDes",
 				"The small entryway of a neo-colonial house. A dining room is open to the south, where a large table can be seen."
 						+ "\n"
 						+ "The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor."
-						+ "\n" + "To the north is a small room, where you can see a piano.");
+						+ "\n" + "To the north is a small room, where you can see a piano\n.");
 		this.rooms[3] = room3;
 	
 		foyer.setExists(room1, 0);
@@ -55,7 +55,6 @@ public class RoomManager {
 		room3.setExists(room1, 3);
 		room3.setExists(room3, 4);
 		
-		System.out.println(itemManager.getItem(0));
 		foyer.setItemToRoom(itemManager.getItem(0), 0);
 		room1.setItemToRoom(itemManager.getItem(0), 0);
 		room1.setItemToRoom(itemManager.getItem(1), 1);

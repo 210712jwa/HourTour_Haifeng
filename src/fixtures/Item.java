@@ -17,18 +17,9 @@ public class Item extends Fixture {
 		return this.item;
 	}
 	
-	public String itemName() {
+	public String getItemName() {
 		return this.name;
 	}
 
-	public void removeItem(Item[] item, int num) {
-		
-		Item[] itemCopy = new Item[item.length - 1];
-		for(int i = 0, j = 0; i < item.length; i++ ) {
-			if(i != num) {
-				itemCopy[j++] = item[i];
-			}
-			this.item = itemCopy;
-		}
-}
+
 }
