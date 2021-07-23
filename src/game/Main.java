@@ -14,7 +14,7 @@ public class Main {
 	private static List<Item> playerItem = new ArrayList<>();
 
 	public static void main(String[] args) {
-
+		System.out.println("Command: go + direction, pick up + item name");
 		rM.init();
 		player.setRoom(rM.getStartingRoom());
 		while (run) {
@@ -80,6 +80,8 @@ public class Main {
 								playerItem.add(player.getCurrentRoom().getItem(i));
 								player.getCurrentRoom().removeItem(i);
 								System.out.println("You pick up " + itemName + ".\n");
+							}else {
+								System.out.println("No such item!");
 							}
 						}
 					}
