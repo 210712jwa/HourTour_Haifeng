@@ -47,7 +47,7 @@ public class Main {
 				System.out.println(cRoom.getItemName(i));
 			}
 		}
-		System.out.print("\n");
+		System.out.println("\n");
 	}
 
 	// split input by space
@@ -80,12 +80,31 @@ public class Main {
 								playerItem.add(player.getCurrentRoom().getItem(i));
 								player.getCurrentRoom().removeItem(i);
 								System.out.println("You pick up " + itemName + ".\n");
-							} else {
-								System.out.println("No such item!");
 							}
 						}
 					}
 				}
+			}
+		}
+
+		// put down command
+		if (command[0].equalsIgnoreCase("put")) {
+			if (command[1].equalsIgnoreCase("down")) {
+				for (int i = 0; i < playerItem.size(); i++) {
+					if (playerItem.size() != 0) {
+						String command2 = "[" + command[2]+ "]";
+						if (command2.equalsIgnoreCase(playerItem.toString())) {
+							for (int j = 0; j < player.getCurrentRoom().getItemSize(); j++) {
+								if (player.getCurrentRoom().getItem(j) == null) {
+									player.getCurrentRoom().setItemToRoom(playerItem.get(i), j);
+									playerItem.remove(i);
+									break;
+								}
+							}
+						}
+					}
+				}
+
 			}
 		}
 
@@ -121,13 +140,13 @@ public class Main {
 
 					break;
 				default:
-					System.out.print("Invalid input, try again!/n");
+					System.out.println("Invalid direction, try again!\n");
 					break;
 
 				}
 
 			} else {
-				System.out.println("Invaild input, try agin!/n");
+				System.out.println("Invaild input, try agin!\n");
 
 			}
 

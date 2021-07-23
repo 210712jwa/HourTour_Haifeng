@@ -66,7 +66,7 @@ public class Room extends Fixture {
 				return exits[3];
 			}
 		}
-		System.out.println("No such direction!");
+		System.out.println("No such direction!\n");
 		return exits[4];
 	}
 

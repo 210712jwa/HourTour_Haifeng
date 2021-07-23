@@ -57,7 +57,7 @@ public class RoomManager {
 		bedroom.setExists(livingRoom, 3);
 		bedroom.setExists(bedroom, 4);
 
-		kitchen.setExists(livingRoom, 0);
+		kitchen.setExists(livingRoom, 2);
 		kitchen.setExists(kitchen, 4);
 
 		// put different item to room
