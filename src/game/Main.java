@@ -14,7 +14,7 @@ public class Main {
 	private static List<Item> playerItem = new ArrayList<>();
 
 	public static void main(String[] args) {
-		System.out.println("Command: go + direction, pick up + item name");
+		System.out.println("Command: go + direction, pick up + item name, open bag, quit");
 		rM.init();
 		player.setRoom(rM.getStartingRoom());
 		while (run) {
@@ -92,7 +92,11 @@ public class Main {
 		//see item in bag
 		if (command[0].equalsIgnoreCase("open")) {
 			if (command[1].equalsIgnoreCase("bag")) {
+				if(playerItem.size() == 0) {
+					System.out.println("Nothing in the bag!\n");
+				}else {
 				System.out.println("You have " + playerItem.toString() + ".\n");
+			}
 			}
 		}
 
